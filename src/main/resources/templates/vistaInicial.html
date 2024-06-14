@@ -4,7 +4,6 @@
 
 
 <style>
-
     * {
         box-sizing: border-box;
         margin: 0;
@@ -46,7 +45,15 @@
     }
 
     .left-panel li {
+        display: flex;
+        align-items: center;
         margin-bottom: 10px;
+    }
+
+    .left-panel li img {
+        margin-right: 10px;
+        width: 30px; /* Ajusta el ancho de la imagen */
+        height: 30px; /* Ajusta el alto de la imagen */
     }
 
     .right-panel {
@@ -87,6 +94,7 @@
     .right-panel p {
         margin-top: 10px;
     }
+
 </style>
 
 <head>
@@ -100,9 +108,15 @@
     <div class="left-panel">
         <h1>Connect with friends and the world around you on Facebook</h1>
         <ul>
-            <li>See photos and updates from friends in News Feed</li>
-            <li>Share what's new in your TimeLine</li>
-            <li>Find more of what you're looking for with Graph Search</li>
+            <li>
+                <img src="/compu.JPG" alt="News Feed Icon" class="icon" >
+                See photos and updates from friends in News Feed</li>
+            <li>
+                <img src="/FACEBOOK_MESSENGER.png" alt="News Feed Icon" class="icon" >
+                Share what's new in your TimeLine</li>
+            <li>
+                <img src="/icononoticia.jpg" alt="News Feed Icon" class="icon">
+                Find more of what you're looking for with Graph Search</li>
         </ul>
     </div>
     <div class="right-panel">
@@ -119,6 +133,11 @@
         </form>
         <p>Usuario agregados: 0</p>
     </div>
+
+    <script>
+
+
+    </script>
 </div>
 </body>
 </html>
