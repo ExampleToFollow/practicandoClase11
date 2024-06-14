@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Agregados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<style>
+
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f2f5;
+    }
+
+    .container {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 800px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .users-list {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .remove-button {
+        padding: 5px 10px;
+        background: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .remove-button:hover {
+        background: #c0392b;
+    }
+
+</style>
+<body>
+<div class="container">
+    <div class="users-list">
+        <p>Usuario agregados: <span id="userCount">0</span></p>
+        <table id="userTable">
+            <thead>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Email</th>
+                <th>Fecha de nacimiento</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Los usuarios agregados aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const users = [
+        { name: 'Brenda', email: 'bre.tumbalobos@gmail.com', birthdate: '1993-04-10' }
+    ];
+
+    function updateUserTable() {
+        const tbody = document.querySelector('#userTable tbody');
+        tbody.innerHTML = '';
+
+        users.forEach((user, index) => {
+            const row = document.createElement('tr');
+
+            const nameCell = document.createElement('td');
+            nameCell.textContent = user.name;
+            row.appendChild(nameCell);
+
+            const emailCell = document.createElement('td');
+            emailCell.textContent = user.email;
+            row.appendChild(emailCell);
+
+            const birthdateCell = document.createElement('td');
+            birthdateCell.textContent = user.birthdate;
+            row.appendChild(birthdateCell);
+
+            const removeCell = document.createElement('td');
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Quitar';
+            removeButton.classList.add('remove-button');
+            removeButton.onclick = () => removeUser(index);
+            removeCell.appendChild(removeButton);
+            row.appendChild(removeCell);
+
+            tbody.appendChild(row);
+        });
+
+        document.getElementById('userCount').textContent = users.length;
+    }
+
+    function removeUser(index) {
+        users.splice(index, 1);
+        updateUserTable();
+    }
+
+    // Inicializa la tabla con usuarios predefinidos
+    updateUserTable();
+</script>
+</body>
+</html>

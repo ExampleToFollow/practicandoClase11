@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f2f5;
+    }
+
+    .container {
+        display: flex;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .left-panel {
+        background: #3b5998;
+        color: #fff;
+        padding: 20px;
+        flex: 1;
+    }
+
+    .left-panel h1 {
+        margin-bottom: 20px;
+    }
+
+    .left-panel ul {
+        list-style: none;
+    }
+
+    .left-panel li {
+        margin-bottom: 10px;
+    }
+
+    .right-panel {
+        padding: 20px;
+        flex: 1;
+        background: #fff;
+    }
+
+    .right-panel h2 {
+        margin-bottom: 10px;
+    }
+
+    .right-panel form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-panel input {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .right-panel button {
+        padding: 10px;
+        background: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .right-panel button:hover {
+        background: #45a049;
+    }
+
+    .right-panel p {
+        margin-top: 10px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Facebook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="left-panel">
+        <h1>Connect with friends and the world around you on Facebook</h1>
+        <ul>
+            <li>See photos and updates from friends in News Feed</li>
+            <li>Share what's new in your TimeLine</li>
+            <li>Find more of what you're looking for with Graph Search</li>
+        </ul>
+    </div>
+    <div class="right-panel">
+        <h2>Sign up!</h2>
+        <p>Es gratis y lo será siempre.</p>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="email" placeholder="Email" required>
+            <input type="email" placeholder="Vuelve a ingresar el correo electrónico" required>
+            <input type="password" placeholder="Password" minlength="6" required>
+            <input type="text" placeholder="Fecha de nacimiento (dd/mm/aaaa)" required>
+            <button type="submit">Abrir cuenta</button>
+        </form>
+        <p>Usuario agregados: 0</p>
+    </div>
+</div>
+</body>
+</html>
+
